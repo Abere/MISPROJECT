@@ -1,0 +1,64 @@
+{
+  "name": "Milestone",
+  "plural": "milestones",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "milestoneNumber": {
+      "type": "number",
+      "required": true
+    },
+    "milestoneName": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "leadPerson": {
+      "type": "string",
+      "required": true
+    },
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date",
+      "required": true
+    },
+    "parent": {
+      "type": "string",
+      "required": true
+    },
+    "children": {
+      "type": "string"
+    },
+    "strategy": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "activities": {
+      "type": "hasMany",
+      "model": "Activity",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "Strategy1": {
+      "type": "belongsTo",
+      "model": "Strategy",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

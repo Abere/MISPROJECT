@@ -1,0 +1,52 @@
+{
+  "name": "ActivityStatusUpdate",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "activity": {
+      "type": "object",
+      "required": true
+    },
+    "submitDate": {
+      "type": "date",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "weekOfStatus": {
+      "type": "number",
+      "required": true
+    },
+    "weekOfStatusYear": {
+      "type": "number",
+      "required": true
+    },
+    "attachment": {
+      "type": "any",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "ActivityU": {
+      "type": "belongsTo",
+      "model": "Activity",
+      "foreignKey": ""
+    },
+    "activityStatusNarratives": {
+      "type": "hasOne",
+      "model": "ActivityStatusNarrative",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

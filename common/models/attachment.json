@@ -1,0 +1,28 @@
+{
+  "name": "Attachment",
+  "plural": "attachment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "urk": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "string"
+    },
+    "filePath": {
+      "type": "string"
+    },
+    "thumbnail": {
+      "type": "Image"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

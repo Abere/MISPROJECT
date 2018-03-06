@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "MongoDB"
+  },
+  "AccessToken": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "ACL": {
+    "dataSource": "MongoDB",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "MongoDB",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "MongoDB",
+    "public": false
+  },
+  "Activity": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "Milestone": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "Strategy": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "University": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "MoE": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "City": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "Zone": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "Region": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "Generation": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "ActivityStatusUpdate": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "Attachment": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "ActivityStatusNarrative": {
+    "dataSource": "MongoDB",
+    "public": true
+  }
+}

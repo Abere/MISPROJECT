@@ -1,0 +1,53 @@
+<div class="container" ng-controller="strategyController">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="md-accordion" id="accordion" role="tablist" aria-multiselectable="true" ng-repeat='strategy in strategies'>
+                
+                <div class="panel panel-default">
+                <md-toolbar ng-init="stratefy.expanded=false" ng-click="strategy.expanded=!strategy.expanded">    
+                    <div class="panel-heading" role="tab">
+                        <h4 class="panel-title">
+                            <a role="button" data-parent="#accordion" class="collapsed">
+                                {{strategy.strategyName}}
+                            </a>
+                        </h4>
+                       
+                        <span flex=""></span>
+                        <spna ng-class="{expandCollapse:true, active:strategy.expanded}"></spna>
+                    </div>
+                </md-toolbar>
+                        <div ng-controller="activityController" class="panel-body" class="table-responsive">
+                        <table class="table table-sm table-bordered" ng-repeat='activity in activities'>
+                            <caption>&emsp;List Of Activities of MOE for {{strategy.strategyName}}</caption>
+                        <thead>  
+                         <tr>
+                            <th>Action</th>
+                            <th>Responsible</th>
+                            <th>Timeline</th> 
+                            <th>Comment</th> 
+                            <th>Traffic Light</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td contenteditable="true"></td>
+<!--                            <td ng-controller ="colorController" style ="background-color: {{color}}; width:10%" ng-click="onColorChange()" ng-class="{'calendar-element-active' : check(d,h), 'calendar-element-disable' : d === idSelectedDayDisable && h === idSelectedHourDisable}"></td>-->
+                            <td ng-controller="colorController"><select name="mySelect" id="mySelect" ng-options="option.name for option in data.availableOptions track by option.id" ng-model="data.selectedOption">
+                                    
+                                </select></td>
+
+                        </tbody> 
+                           
+                        </table>
+                            
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input class="btn btn btn-outline-primary btn-lg pull-right" type="submit" value="Save"> 
+    <input class="btn btn-outline-success btn-lg pull-right" type="submit" value="Submit">
+</div>

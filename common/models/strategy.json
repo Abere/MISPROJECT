@@ -1,0 +1,48 @@
+{
+  "name": "Strategy",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "strategyNumber": {
+      "type": "number",
+      "required": true
+    },
+    "strategyName": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "outcomeMeasure": {
+      "type": "string",
+      "required": true
+    },
+    "definitionOfSuccess": {
+      "type": "string",
+      "required": true
+    },
+    "milestoneDescription": {
+      "type": "string",
+      "required": true
+    },
+    "leadership": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "milestones": {
+      "type": "hasMany",
+      "model": "Milestone",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

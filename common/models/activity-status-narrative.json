@@ -1,0 +1,22 @@
+{
+  "name": "ActivityStatusNarrative",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "narrativeReport": {
+      "type": "string"
+    },
+    "weekOfStatus": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+
+  },
+  "acls": [],
+  "methods": {}
+}

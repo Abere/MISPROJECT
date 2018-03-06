@@ -1,0 +1,29 @@
+{
+  "name": "Zone",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "zoneName": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "cities": {
+      "type": "hasMany",
+      "model": "City",
+      "foreignKey": ""
+    },
+    "region": {
+      "type": "belongsTo",
+      "model": "Region",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

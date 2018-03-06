@@ -1,0 +1,14 @@
+
+<table class="tablecolor table-bordered" ng-controller="CalendarCtrl">
+  <thead>
+    <th scope="col" title="Monday"><i class="fa fa-clock-o" aria-hidden="true"></i></th>
+    <th ng-repeat="d in week" scope="col">{{d}}</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="h in hours">
+   <td class="col">{{h}}</td>
+   <td ng-repeat="d in week"  ng-click="setSelected(d, h)"ng-class="{'calendar-element-active' : check(d,h), 'calendar-element-disable' : d === idSelectedDayDisable && h === idSelectedHourDisable}">
+   </td>
+ </tr>
+  </tbody>
+</table>

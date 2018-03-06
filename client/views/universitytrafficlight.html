@@ -1,0 +1,79 @@
+<div class="container" ng-controller="strategyController">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="md-accordion" id="accordion" role="tablist" aria-multiselectable="true" ng-repeat='strategy in strategies'>
+                
+                <div class="panel panel-default">
+                <md-toolbar ng-init="stratefy.expanded=false" ng-click="strategy.expanded=!strategy.expanded">    
+                    <div class="panel-heading" role="tab">
+                        <h4 class="panel-title">
+                            <a role="button" data-parent="#accordion" class="collapsed">
+                                {{strategy.strategyName}}
+                            </a>
+                        </h4>
+                       
+                        <span flex=""></span>
+                        <spna ng-class="{expandCollapse:true, active:strategy.expanded}"></spna>
+                    </div>
+                </md-toolbar>
+                        <div ng-controller="activityController" class="panel-body" class="table-responsive">
+<!--                            <p ng-repeat='activity in activities'>{{activity.activityTitle}}</p>-->
+                        <table class="table table-responsive table-bordered" ng-repeat='activity in activities'>
+                            <caption>&emsp;List Of Activities for {{strategy.strategyName}}</caption>
+                         <thead>  
+                         <tr>
+                            <th>{{strategy.strategyName}}</th>
+                            <th>{{strategy.description}}</th>
+                            <th></th>    
+                            <th>Traffic Light</th>
+                            <th colspan="5">August 17</th>
+                            <th colspan="5">September 17</th>
+                            <th colspan="5">October 17</th>
+                            <th colspan="5">November 17</th>
+                          </tr>
+                        </thead>    
+                        <thead>   
+                          <tr>
+                            <th>Number</th>
+                            <th>Action Plan</th>
+                            <th>Lead Person</th>
+                            <th></th>
+                              <th ng-repeat="d in week" scope="col">{{d}}</th>  
+                              <th ng-repeat="d in week" scope="col">{{d}}</th>
+                              <th ng-repeat="d in week" scope="col">{{d}}</th>
+                              <th ng-repeat="d in week" scope="col">{{d}}</th>
+                          </tr> 
+                        </thead>
+                            <thead ng-controller="milestoneController">
+                            <tr ng-repeat="milestone in milestones" >
+                            <th>{{milestone.milestoneNumber}}</th>    
+                            <th colspan="100%">{{milestone.milestoneName}}</th>
+                            </tr>    
+                        </thead>
+                        <tbody>  
+                            <tr>
+                                <td>{{activity.activityNumber}}</td>
+                                <td>{{activity.activityTitle}}</td>
+                                <td></td>
+                                <td style ="background-color: {{color}}" ng-controller="colorController"><select name="mySelect" id="mySelect" ng-options="option.name for option in data.availableOptions track by option.id" ng-model="data.selectedOption" ng-click="onColorChange()">
+                                    
+                                </select></td>
+                                <td ng-controller ="colorController" style ="background-color: {{color}}" ng-repeat="d in week" ng-click="onSelectColorChange()" ng-class="{'calendar-element-active' : check(d), 'calendar-element-disable' : d === idSelectedDayDisable}"></td>
+                                <td ng-repeat="d in week"></td>
+                                <td ng-repeat="d in week"></td>
+                                <td ng-repeat="d in week"></td>
+                            </tr>
+                        </tbody>
+                            
+                        </table>
+                            <input ng-click = "onSelectColorChange($index)" ng-controller ="colorController" class="btn btn btn-outline-primary btn-lg pull-right" type="submit" value="Save"> 
+                            <input class="btn btn-outline-success btn-lg pull-right" type="submit" value="Submit">
+                        </div>
+                   
+                </div>
+ 
+            </div>
+        </div>
+    </div>
+</div>
+

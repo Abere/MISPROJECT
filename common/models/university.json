@@ -1,0 +1,43 @@
+{
+  "name": "University",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "universityName": {
+      "type": "string",
+      "required": true
+    },
+    "shortName": {
+      "type": "string",
+      "required": true
+    },
+    "establishedYear": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "cities": {
+      "type": "hasOne",
+      "model": "City",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "generations": {
+      "type": "hasOne",
+      "model": "Generation",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
